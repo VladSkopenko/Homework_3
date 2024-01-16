@@ -1,0 +1,16 @@
+def serialize_to_json_with_tag(self, records, tag):
+    filtered_records = [record for record in records if tag in [item.tag for item in record.tags]]
+    
+    for record in filtered_records:
+        serialize_record = {
+            'Name': record.name.name,
+            'ID': record.id.id,
+            'Phones': [item.phone for item in record.phones],
+            'Birthday': record.birthday.birthday.strftime('%Y-%m-%d') if isinstance(record.birthday.birthday, date) else None,
+            'Email': record.email.email,
+            'Comment': record.comment.comment,
+            'Address': record.address.address,
+            'Company': record.company.company,
+            'Tags': [item.tag for item in record.tags],
+        }
+        self.exiting_data.append(serialize_record)

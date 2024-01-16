@@ -1,0 +1,30 @@
+from datetime import date, datetime, timedelta
+
+users = [{"name": "Bill Gates", "birthday": datetime(1955, 11, 3).date()}]
+
+def get_birthdays_per_week(users):
+    result = {}
+    week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    now = datetime.today().date()
+    next_week = now + timedelta(days=7)
+
+    for user in users:
+        birthday = user['birthday']
+        if birthday.month == now.month and birthday.day >= now.day:
+            if now.weekday() == 0:
+                start = now.weekday() - 2
+                birth_day = birthday.day
+                birth_week_d = birthday.weekday()
+                if start <= birth_day <= next_week:
+                    result[week[birth_week_d]] = user["name"]
+            else:
+                start = now.weekday()
+                birth_day = birthday.day
+                birth_week_d = birthday.weekday()
+                if start <= birth_day <= next_week:
+                    result[week[birth_week_d]] = user["name"]
+    
+    return result
+
+# Приклад використання:
+print(get_birthdays_per_week(users))

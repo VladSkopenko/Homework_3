@@ -1,0 +1,15 @@
+1.Додати нове поле до рекорд - Коментар 
+2.Додати видалення коментара 
+3.Додати зміну коментаря
+4.Додати пошук по коментарю 
+5.Додати нове поле до рекорд - Тег 
+6. Додати новий класс коментар =  сомнительно 
+7. Додати новий класс теги = Назар , 
+8. Додати пошук по тегові 
+9.Додати зміну тега 
+10.Додати Адресу 
+11.Додати видалення тега 
+12.Рід діяльності 
+13. Компанія 
+    def __str__(self):
+        return f'{positive_action("ID:")} {book_style(self.id.get_id)} {positive_action("Name:")} {book_style(self.name.get_name)} {positive_action("Phones: ")} {book_style(" ".join([str(item) for item in self.phones]))} {positive_action("Birthday: ")} {book_style(self.birthday.get_birthday)} {positive_action("Email:")} {book_style(self.email.get_email)}{positive_action("Comment:")} {book_style(self.comment.get_comment)}'

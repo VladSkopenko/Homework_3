@@ -1,0 +1,16 @@
+def split_list(grade):
+    suma_grade = sum(grade)
+    mid_num = suma_grade / len(grade)
+    list_low = []
+    list_big = []
+    for i in range(len(grade)):
+        if grade[i] > mid_num:
+            list_big.append(grade[i])
+        else:
+            list_low.append(grade[i])
+    return list_low, list_big 
+    
+    
+
+
+print(split_list([5,5,5,5]))

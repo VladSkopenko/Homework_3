@@ -1,0 +1,11 @@
+@input_error
+    def remove_phone(self, record: Record, serialize_record, phone):
+        for item in record.phones:
+            if item.get_phone == phone:
+                item.set_phone = None
+            else:
+                raise ValueError('ValueError: Phone number not found.')
+        for item in serialize_record['Phones']:
+            if item == phone:
+                serialize_record['Phones'].remove(phone)
+        self.save_contacts()

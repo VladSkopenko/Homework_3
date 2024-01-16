@@ -1,0 +1,9 @@
+    def do_exp_tag(self, *args):
+        "Exports contacts by tag to a JSON file"
+        tag_to_export = input(command_message(
+            "Enter the tag to export contacts: "))
+
+        if tag_to_export != "":
+                self.book.export_contacts_by_tag(tag_to_export)
+        else:
+            print(error_message("Tag cannot be empty."))

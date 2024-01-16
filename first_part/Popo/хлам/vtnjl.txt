@@ -1,0 +1,68 @@
+@input_error
+    def add_full_record(self, name):
+        record = Record(name, int(self.set_id()))
+        record.phones.append(Phone(input(command_message('Enter Phone: '))))
+        birthday = input(command_message('Enter Birthday: '))
+        birthday = birthday.split()[::-1]
+        record.birthday.set_birthday = input(command_message('Enter Birthday: '))
+        record.email.set_email = input(command_message('Enter Email: '))
+        record.comment.set_comment = input(command_message('Enter comment: '))
+        record.address.set_address = input(command_message('Enter address: '))
+        record.company.set_company = input(command_message("Enter company: "))
+        record.tags.append(Tag(input(command_message('Enter Tag: '))))# Додав нове поле
+        self.data.append(record)
+        self.serialize_to_json(record)
+        self.save_contacts()
+        return (positive_action(f'{record.name.get_name} added'))
+
+
+
+
+
+
+
+
+
+
+
+
+2 def serialize_to_json(self, record: Record):
+        serialize_record = {'Name': record.name.get_name,
+                            'ID': record.id.get_id,
+                            'Phones': [item.get_phone for item in record.phones],
+                            'Birthday': str(record.birthday.get_birthday) if isinstance(record.birthday.get_birthday,
+                                                                                        date) else None,
+                            'Email': record.email.get_email,
+                            'Comment': record.comment.get_comment,
+                            'Address': record.address.get_address,
+                            'Company': record.company.get_company,
+                            'Tags': [it.get_tag for it in record.tags]
+                            }  
+        self.exiting_data.append(serialize_record)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ @input_error
+    def deserialize(self, dict) -> Record:
+        record = Record(dict['Name'], dict['ID'])
+
+        record.birthday.set_birthday = dict['Birthday']
+        [record.phones.append(Phone(item)) for item in dict['Phones']]
+        record.email.set_email = dict['Email']
+        record.comment.set_comment = dict['Comment']
+        record.address.set_address = dict['Address']
+        record.company.set_company = dict['Company']
+        [record.tags.append(Tag(it)) for it in dict['Tags']]  # Нове поле
+
+        return record

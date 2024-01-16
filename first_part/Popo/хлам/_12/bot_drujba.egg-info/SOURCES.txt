@@ -1,0 +1,7 @@
+setup.py
+bot_drujba.egg-info/PKG-INFO
+bot_drujba.egg-info/SOURCES.txt
+bot_drujba.egg-info/dependency_links.txt
+bot_drujba.egg-info/entry_points.txt
+bot_drujba.egg-info/requires.txt
+bot_drujba.egg-info/top_level.txt

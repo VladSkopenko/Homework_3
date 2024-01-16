@@ -1,0 +1,37 @@
+Що таке Agile ? Вміння підлаштовуватися під те що неможливо контролювати.
+Принципи 12 ?
+1.Найвищий пріорітет потреби замовника 
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+Scrum is ?
+Sprint in scrum is ? 
+Scrum master is ?
+Team Lead is ?
+Product owner 
+Developers
+Retrospective
+Review
+Daily scrum meeting and artifacts update
+MindMap
+Video English 
+Agile?
+Bot English
+ Knowledge of the principles OOD, understanding of SOLID principles
+Свопинг
+sys argv is ?
+os librarely is ?
+метод find
+
+
+
+
+

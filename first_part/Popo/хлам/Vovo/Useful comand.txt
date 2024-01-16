@@ -1,0 +1,7 @@
+ls -Force = show hidden directory
+git init = created empty repositoriy
+git help = List of comand
+b972186] Basa commit
+git commit -m "name of commit" = created commit
+git merge =  Совместить branches
+git push -u origin "name branch"

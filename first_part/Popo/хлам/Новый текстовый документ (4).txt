@@ -1,0 +1,58 @@
+@input_error
+    def add_company(self, record: Record, serialize_record, company):
+        record.company.set_company = company
+        serialize_record['Company'] = company
+        self.save_contacts()
+        return f"{positive_action('Company')} {book_style(record.company.get_company)} {positive_action('added')}"
+
+    @input_error
+    def remove_company(self, record: Record, serialize_record, company):
+        record.company.set_company = None
+        serialize_record['Company'] = None
+        self.save_contacts()
+        return f"{positive_action('Company')} {book_style(record.company.get_company)} {positive_action('removed')}"
+
+    @input_error
+    def add_comment(self, record: Record, serialize_record, comment):  # Додавання або зміна все існуючого коментаря
+        record.comment.set_comment = comment
+        serialize_record['Comment'] = comment
+        self.save_contacts()
+        return f'{positive_action("Comment")} {book_style(record.comment.get_comment)} {positive_action("added.")}'
+
+    @input_error
+    def remove_comment(self, record: Record, serialize_record):  # Видалення
+        record.comment.set_comment = None
+        serialize_record['Comment'] = None
+        self.save_contacts()
+        return f'{positive_action("Comment")} {book_style(record.comment.get_comment)} {positive_action("removed.")}'  # Виправив помилку
+
+    @input_error
+    def add_address(self, record: Record, serialize_record, address):  # Додавання або зміна вже існуючого адреса
+        record.address.set_address = address
+        serialize_record['Address'] = address
+        self.save_contacts()
+        return f'{positive_action("Address")} {book_style(record.address.get_address)} {positive_action("added.")}'
+
+    @input_error
+    def remove_address(self, record: Record, serialize_record):  # видалення адреси
+        record.address.set_address = None
+        serialize_record['Address'] = None
+        self.save_contacts()
+        return f'{positive_action("Address")} {book_style(record.address.get_address)} {positive_action("removed")}'
+
+
+    @input_error
+    def add_teg(self, record: Record, serialize_record, teg):
+        record.tegs.append(Teg(teg))
+        pass
+    @input_error
+    def edit_teg(self):
+        pass
+
+    @input_error
+    def remove_teg(self):
+        pass
+
+
+    def find_teg(self):
+        pass

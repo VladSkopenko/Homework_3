@@ -1,0 +1,10 @@
+    def __str__(self):
+        return (f'{positive_action("ID:")} {book_style(self.id.get_id)} '
+                f'{positive_action("Name:")} {book_style(self.name.get_name)} '
+                f'{positive_action("Phones:")} {book_style(" ".join([str(item) for item in self.phones]))} '
+                f'{positive_action("Birthday:")} {book_style(self.birthday.get_birthday)} '
+                f'{positive_action("Email:")} {book_style(self.email.get_email)} '
+                f'{positive_action("Comment:")} {book_style(self.comment.get_comment)} '
+                f'{positive_action("Address:")} {book_style(self.address.get_address)} '
+                f'{positive_action("Company:")} {book_style(self.company.get_company)} '
+                f'{positive_action("Tags:")} {book_style(" ".join([str(i) for i in self.tags]))} ')
