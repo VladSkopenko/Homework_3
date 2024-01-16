@@ -56,6 +56,6 @@ if __name__ == "__main__":
     [th.join() for th in threads]
     end_time = time.time()
     finish = end_time-start_time
-    print(finish)
+    logging.debug(finish)
     with open("з_потоками.txt", "w") as file:
         file.write(f"Час виконання скрипта: {finish} секунд")

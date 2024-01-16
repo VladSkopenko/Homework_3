@@ -52,7 +52,7 @@ if __name__ == "__main__":
 
     end_time = time.time()
     finish = end_time - start_time
-    print(finish)
+    logging.debug(finish)
 
     with open("без_потока.txt", "w") as file:
         file.write(f"Час виконання скрипта: {finish} секунд")
